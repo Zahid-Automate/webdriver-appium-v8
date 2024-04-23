@@ -9,10 +9,26 @@ describe("Android Elements Test",()=>{
         await expect (actionBar).toBeExisting();
     })
 
-    it.only('Find element by css selector', async()=>{
+    it('Find element by css selector', async()=>{
         //find element by class name
         const className = await $('android.widget.TextView');
         //Assertion
         await expect(className).toHaveText("API Demos");
     });
+
+    it('Find elements by Xpath', async()=>{
+        //Find By xpath - //tagname[@attribute=value]
+        //await $('//android.widget.TextView[@content-desc="App"]').click();
+        await $('//android.widget.TextView[@content-desc="Alert Dialogs"]').click();
+
+        //Find By resource id
+        await $('//android.widget.Button[@resource-id="io.appium.android.apis:id/select_button"]').click();
+
+        //Find By text
+        await $('//android.widget.TextView[@text="Command two"]').click();
+
+        //Find By class and Assert
+        const textValue = await $('//android.widget.TextView')
+        await expect(textValue).toHaveText('You selected: 1 , Command two');
+    })
 })
