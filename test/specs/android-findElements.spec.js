@@ -7,7 +7,7 @@ describe("Android Elements Test",()=>{
         //assert that element is present in new page
         const actionBar = await $('~Action Bar');
         await expect (actionBar).toBeExisting();
-    })
+    });
 
     it('Find element by css selector', async()=>{
         //find element by class name
@@ -30,7 +30,7 @@ describe("Android Elements Test",()=>{
         //Find By class and Assert
         const textValue = await $('//android.widget.TextView')
         await expect(textValue).toHaveText('You selected: 1 , Command two');
-    })
+    });
 
     it('Find elements by ui automator', async()=>{
         //find by text contains using ui automator
@@ -38,7 +38,7 @@ describe("Android Elements Test",()=>{
 
     });
 
-    it.only('Find multiple elements', async()=>{
+    it('Find multiple elements', async()=>{
         const expectedList = [	
             'API Demos',"Access'ibility",'Accessibility',
             'Animation','App','Content',
@@ -56,4 +56,19 @@ describe("Android Elements Test",()=>{
         //assert the list
         await expect(actualList).toEqual(expectedList);
     })
+
+    it.only('Working with text field ', async()=>{
+        //access the auto complete-screen
+        await $('~Views').click();
+        await $('~Auto Complete').click();
+        await $('~1. Screen Top').click();
+
+        //enter the country name
+        const countryInput = await $('//*[@resource-id="io.appium.android.apis:id/edit"]');
+        await countryInput.addValue('Canada');
+
+        //verify the country name
+        await expect(countryInput).toHaveText('Canada');
+
+    });
 })
