@@ -38,5 +38,22 @@ describe("Android Elements Test",()=>{
 
     });
 
-    
+    it.only('Find multiple elements', async()=>{
+        const expectedList = [	
+            'API Demos',"Access'ibility",'Accessibility',
+            'Animation','App','Content',
+            'Graphics','Media','NFC','OS','Preference','Text','Views'];
+
+        const actualList = [];
+        //find the elements
+        const textlist = await $$('android.widget.TextView');
+       
+        //loop through the elements
+        for (const element of textlist){
+            actualList.push(await element.getText());
+        }
+
+        //assert the list
+        await expect(actualList).toEqual(expectedList);
+    })
 })
