@@ -35,7 +35,7 @@ describe('Andrioid Native Feature Tests',()=>{
 
     });
 
-    it.only('Vertical scrolling ', async()=>{
+    it('Vertical scrolling ', async()=>{
         await $('~App').click();
         await $('~Activity').click();
         // Method 1 of scrolling 
@@ -48,5 +48,12 @@ describe('Andrioid Native Feature Tests',()=>{
         // Assert
         await expect($('~Secure Dialog')).toExist();
     });
+
+    it.only('Horizontal scrolling ', async()=>{
+        await driver.startActivity("io.appium.android.apis","io.appium.android.apis.view.Gallery1");
+
+        await $('android= new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()').click();
+        await driver.pause(5000);
+    })
 
 })
