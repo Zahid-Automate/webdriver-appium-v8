@@ -12,7 +12,7 @@ describe('Andrioid Native Feature Tests',()=>{
     await expect($('//*[@text="App/Alert Dialogs"]')).toExist();
     });
 
-    it.only('Click on Accept in Alert box', async()=>{
+    it('Click on Accept in Alert box', async()=>{
      // access the alerts page directly
      await driver.startActivity("io.appium.android.apis", "io.appium.android.apis.app.AlertDialogSamples");
 
@@ -33,6 +33,20 @@ describe('Andrioid Native Feature Tests',()=>{
     // assertion - alert box is no longer visible
     await expect($('//*[@resource-id="android:id/alertTitle"]')).not.toExist();
 
+    });
+
+    it.only('Vertical scrolling ', async()=>{
+        await $('~App').click();
+        await $('~Activity').click();
+        // Method 1 of scrolling 
+        //await $('android= new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(1,5)').click();
+        //await $('~Secure Surfaces').click();
+
+        // Method 2 more reliable way of scrolling
+        await $('android= new UiScrollable(new UiSelector().scrollable(true)).scrollTextIntoView("Secure Surfaces")').click();
+
+        // Assert
+        await expect($('~Secure Dialog')).toExist();
     });
 
 })
