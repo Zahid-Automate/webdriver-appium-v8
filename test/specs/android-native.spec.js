@@ -49,10 +49,32 @@ describe('Andrioid Native Feature Tests',()=>{
         await expect($('~Secure Dialog')).toExist();
     });
 
-    it.only('Horizontal scrolling ', async()=>{
+    it('Horizontal scrolling ', async()=>{
         await driver.startActivity("io.appium.android.apis","io.appium.android.apis.view.Gallery1");
 
         await $('android= new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList().scrollForward()').click();
+        await driver.pause(5000);
+    })
+
+    it.only('Date Time Picker Validation', async()=>{
+        await $('~Views').click();
+        await $('~Date Widgets').click();
+        await $('~1. Dialog').click();
+
+        const dateText = await $('//*[@resource-id="io.appium.android.apis:id/dateDisplay"]');
+        const currentDate = dateText.getText();
+       
+        await $('~change the date').click();
+        await $('~Next month').click();
+
+        // Select 10th day of the month
+        await $('android=new UiSelector().text("10")').click();
+
+        //Click on OK Button
+        await $('//*[@resource-id="android:id/button1"]').click();
+
+        // Assert that date is changed
+        await expect (await dateText.getText()).not.toEqual(currentDate);
         await driver.pause(5000);
     })
 
