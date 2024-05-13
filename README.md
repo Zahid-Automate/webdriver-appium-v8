@@ -8,8 +8,10 @@
  Sample test case result
  ![image](https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/75565c2a-c529-4344-9ebe-cc8c4bfc7626)
 
+ Setting up Babel to use imports with Page object Model
 
- 
+ https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/d507a6fb-167a-4d8f-b17c-156e475c8cfe
+
 
  
 
