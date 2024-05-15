@@ -1,4 +1,4 @@
-const AddNoteScreen = require("../screenobjects/android/add-note.screen.spec");
+const AddNoteScreen = require("./add-note.screen.spec");
 
 describe ('Add Notes',()=>{
     it('Skip tutorial', async()=>{
