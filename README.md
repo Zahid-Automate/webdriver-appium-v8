@@ -10,7 +10,26 @@
 
  Setting up Babel to use imports with Page object Model
 
- https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/d507a6fb-167a-4d8f-b17c-156e475c8cfe
+```
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/register
+```
+Make sure your babel.config.js is configured properly.
+
+The simplest setup you can use is:
+```
+module.exports = {
+    presets: [
+        ['@babel/preset-env', {
+            targets: {
+                node: '20' // update with the target you are aiming for
+            }
+        }]
+    ]
+}
+```
+Video demo showing tests running using babel configuration
+
+https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/d507a6fb-167a-4d8f-b17c-156e475c8cfe
 
 
  
