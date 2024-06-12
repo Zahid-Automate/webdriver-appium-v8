@@ -33,7 +33,8 @@ https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/d507a6fb-1
 
 Video demo showing test running on iOS
 
-https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/6adaebc9-f76f-4a2d-872d-3543a47e84f8
+https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/26906322-86ce-4087-bb25-f796b3adccf4
+
 
 
  
