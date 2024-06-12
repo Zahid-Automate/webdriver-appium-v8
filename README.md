@@ -27,9 +27,13 @@ module.exports = {
     ]
 }
 ```
-Video demo showing tests running using babel configuration
+Video demo showing tests running using babel configuration for android
 
 https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/d507a6fb-167a-4d8f-b17c-156e475c8cfe
+
+Video demo showing test running on iOS
+
+https://github.com/Zahid-Automate/webdriver-appium-v8/assets/45691238/6adaebc9-f76f-4a2d-872d-3543a47e84f8
 
 
  
